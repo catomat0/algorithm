@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Main {
     public static void solution(String test, Set<String> say) {
-        StringBuilder answer = new StringBuilder();  // 배열 대신 단일 StringBuilder 사용
+        StringBuilder answer = new StringBuilder();
 
         // 테스트 문자열을 단어 단위로 분리
         String[] words = test.split(" ");
@@ -29,7 +29,7 @@ public class Main {
         
         while (i < n) {
             String test = br.readLine();
-            Set<String> say = new HashSet<>(); // 각 테스트 케이스마다 새로운 Set 생성
+            Set<String> say = new HashSet<>();
 
             String line;
             while (!(line = br.readLine()).equals("what does the fox say?")) {

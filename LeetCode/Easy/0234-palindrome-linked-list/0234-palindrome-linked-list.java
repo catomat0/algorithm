@@ -9,7 +9,7 @@
  * }
  */
 class Solution {
-    public boolean isPalindrome(ListNode head) {
+    public static boolean isPalindrome(ListNode head) {
 
         ArrayDeque<Integer> numStack = new ArrayDeque<>();
 
@@ -20,11 +20,10 @@ class Solution {
             node = node.next;
         }
 
-        while (head != null) {
-            if (head.val != numStack.poll()) {
+        while (!numStack.isEmpty() && numStack.size() > 1) {
+            if (!numStack.pollFirst().equals(numStack.pollLast())) {
                 return false;
             }
-            head = head.next;
         }
         return true;
     }

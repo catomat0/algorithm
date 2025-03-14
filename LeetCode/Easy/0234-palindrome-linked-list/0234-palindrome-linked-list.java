@@ -9,22 +9,37 @@
  * }
  */
 class Solution {
-    public static boolean isPalindrome(ListNode head) {
-
-        ArrayDeque<Integer> numStack = new ArrayDeque<>();
+    public boolean isPalindrome(ListNode head) {
 
         ListNode node = head;
+        int size = 0;
+        StringBuilder front = new StringBuilder();
+        StringBuilder rear = new StringBuilder();
 
+        // size
         while (node != null) {
-            numStack.push(node.val);
+            size++;
             node = node.next;
         }
 
-        while (!numStack.isEmpty() && numStack.size() > 1) {
-            if (!numStack.pollFirst().equals(numStack.pollLast())) {
-                return false;
-            }
+        // front
+        node = head;
+        for (int i = 0; i < size / 2; i++) {
+            front.append(node.val);
+            node = node.next;
         }
-        return true;
+        // 홀수 사이즈 예외 처리 (중앙 값 제외) / node는 중앙 위치 중
+        if (size % 2 == 1) {
+            node = node.next;
+        }
+
+        // rear
+        while (node != null) {
+            rear.append(node.val);
+            node = node.next;
+        }
+
+        // rear - front
+        return front.compareTo(rear.reverse()) == 0;
     }
 }

@@ -9,7 +9,7 @@
  * }
  */
 class Solution {
-    public static ListNode swapPairs(ListNode head) {
+    public ListNode swapPairs(ListNode head) {
         // 헤드포인터 노드 선언 (깡통)
         ListNode node = new ListNode(0);
         ListNode root = node;

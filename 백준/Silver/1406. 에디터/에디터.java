@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Ex1406 {
 
     /**
      * L	커서를 왼쪽으로 한 칸 옮김 (커서가 문장의 맨 앞이면 무시됨) -> 현재 위치의 전 노드와 전전 노드 사이에 노드 생성
@@ -89,17 +89,15 @@ public class Main {
         for (String[] input : inputs) {
             String command = input[0];
 
-            if (command.equals("L")) { 
-                if (cursor.hasPrevious()) cursor.previous();
-            } else if (command.equals("D")) { 
-                if (cursor.hasNext()) cursor.next();
-            } else if (command.equals("B")) { 
-                if (cursor.hasPrevious()) {
-                    cursor.previous();
-                    cursor.remove();
-                }
-            } else if (command.equals("P")) { 
+            if (command.equals("P")) {
                 cursor.add(input[1]);
+            } else if (command.equals("L") && cursor.hasPrevious()) {
+                cursor.previous();
+            } else if (command.equals("D") && cursor.hasNext()) {
+                cursor.next();
+            } else if (command.equals("B") && cursor.hasPrevious()) {
+                 cursor.previous();
+                 cursor.remove();
             }
         }
 

@@ -89,16 +89,16 @@ public class Main {
         for (String[] input : inputs) {
             String command = input[0];
 
-            if (command.equals("L")) { // 왼쪽 이동
+            if (command.equals("L")) { 
                 if (cursor.hasPrevious()) cursor.previous();
-            } else if (command.equals("D")) { // 오른쪽 이동
+            } else if (command.equals("D")) { 
                 if (cursor.hasNext()) cursor.next();
-            } else if (command.equals("B")) { // 왼쪽 문자 삭제
+            } else if (command.equals("B")) { 
                 if (cursor.hasPrevious()) {
                     cursor.previous();
                     cursor.remove();
                 }
-            } else if (command.equals("P")) { // 왼쪽에 문자 추가
+            } else if (command.equals("P")) { 
                 cursor.add(input[1]);
             }
         }

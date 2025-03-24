@@ -6,6 +6,8 @@ import java.util.ListIterator;
 
 public class Main {
 
+    // String -> 불변객체라서 원소 추가 시 메모리를 많이 잡아먹어서 Timeout -> 어차피 한글자로 나누어 저장하기에 Char로 저장하여 메모리 줄이기
+    
     // br 통하여 입력받으면 노드화된 상태로 입력받음
     // list(0) ->  < < B P < A > > C d -
     // list(1) ->  T h I s I s S 3 C r 3 t

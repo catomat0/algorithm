@@ -1,5 +1,5 @@
 class Solution {
-    public int numJewelsInStones1(String J, String S) {
+    public int numJewelsInStones(String J, String S) {
 
         int count = 0;
         Set<Character> freqs = new HashSet<>();
